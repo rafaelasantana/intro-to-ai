@@ -1,3 +1,3 @@
-# intro-to-ai
+# Introduction to AI
 
 This repository contains examples and resources from the lecture "Introduction to AI" as part of my Computer Science bachelor's degree.
