@@ -1,0 +1,19 @@
+
+bird(X) :- penguin(X).
+bird(X) :- eagle(X).
+
+
+fly(X) :- bird(X), not penguin(X).
+
+%-fly(X) :- not bird(X).
+-fly(X) :- bird(X), penguin(X). 
+
+eagle(eddy).
+penguin(tux).
+
+
+#show bird/1.
+#show fly/1.
+#show -fly/1.
+#show penguin/1.
+#show eagle/1.

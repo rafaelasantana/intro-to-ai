@@ -1,0 +1,12 @@
+node(X) :- arc(X, Y).
+node(Y) :- arc(X, Y).
+arc(a, b). arc(b, c). arc(c, d). arc(e, f). arc(f, a). arc(a, g). arc(g,a). arc(h, i). arc(i, j). arc(j, i).
+start(a).
+
+
+out(X) :- node(X), node(Y), arc(X, Y).
+in(X) :- node(X), node(Y), arc(Y, X). 
+
+output(X) :- in(X), out(X).
+
+#show output/1.

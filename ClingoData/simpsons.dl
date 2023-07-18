@@ -1,0 +1,17 @@
+childOf(bart,homer). childOf(lisa,homer). childOf(maggie,homer).
+childOf(homer,abe). childOf(herbert,abe).
+childOf(marge,jacqueline). childOf(patty,jacqueline). childOf(selma,jacqueline).
+childOf(bart,marge). childOf(lisa,marge). childOf(maggie,marge).
+female(lisa). female(maggie). female(marge). female(jacqueline). female(patty). female(selma).
+male(bart). male(homer). male(abe). male(herbert).
+
+
+kids_not_siblings(E, H, D, F) :- childOf(E, D), childOf(H, F), not childOf(E, F), not childOf(H, D).
+
+parents_siblings(D, F) :- childOf(D, A), childOf(F, A).
+
+kids_are_cousins(E, H, D, F) :- kids_not_siblings(E, H, D, F), parents_siblings(D, F).
+
+cousin(E, H) :- kids_are_cousins(E, H, D, F).
+
+#show cousin/2.

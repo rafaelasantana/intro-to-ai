@@ -1,0 +1,10 @@
+childOf(william,john). childOf(david,john). childOf(adam,john). childOf(chris,william). childOf(stephanie,william). childOf(wayne,david). childOf(tiffany,david). childOf(julie,david). childOf(neil,david). childOf(peter,david). childOf(sophia,adam). childOf(william,megan). childOf(david,megan). childOf(adam,megan). childOf(stephanie,emma). childOf(chris,emma). childOf(tiffany,olivia). childOf(julie,olivia). childOf(neil,olivia). childOf(peter,olivia). childOf(sophia,lily).
+male(john). male(william). male(david). male(adam). male(chris). male(neil). male(peter).
+female(stephanie). female(tiffany). female(julie). female(sophia). female(megan). female(emma). female(olivia). female(lily).
+
+
+mother(X, Y) :- childOf(Y, X), female(X). 
+father(X, Y) :- childOf(Y, X), male(X).
+
+#show father/2.
+#show mother/2.
